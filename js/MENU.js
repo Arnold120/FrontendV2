@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!usuarioActual) {
         alert("Debes iniciar sesión.");
-        window.location.href = "LOGIN.html"; 
+        window.location.href = "/Index.html"; 
         return;
     }
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         botonCerrarSesion.addEventListener("click", () => {
             localStorage.removeItem("usuarioActual");
             alert("Sesión cerrada.");
-            window.location.href = "LOGIN.html";
+            window.location.href = "/Index.html";
         });
     }
     mostrarSeccion('bienvenida');
