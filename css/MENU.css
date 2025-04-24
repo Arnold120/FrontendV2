@@ -24,12 +24,13 @@ body {
     padding: 0;
     z-index: 1;
 }
+
 .logo h1{
     margin: 10px;
 }
+
 .usuario button{
     padding: 3px;
-    align-items: center;
     margin: 10px;
 }
 .sidebar {
@@ -41,7 +42,6 @@ body {
     top: 0;
     bottom: 0;
 }
-
 
 .sidebar nav ul {
     list-style: none;
@@ -77,6 +77,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .submenu-container,
 .submenu,
 .submenu-lista,

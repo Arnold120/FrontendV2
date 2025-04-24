@@ -16,13 +16,12 @@
         <form id="formVenta">
             <h2>Registrar Nueva Venta</h2>
 
-            <div class="campo">
+            <div class="campo" id="campoCliente">
                 <label for="cliente">Seleccionar Cliente:</label>
                 <select id="cliente" name="cliente" required>
-                    <option value="">Selecciona un cliente</option>
-                    <!-- Aquí se llenarán los clientes desde JavaScript -->
+                    <option value="">Selecciona un cliente</option>     
                 </select>
-            </div>
+            </div> 
 
             <div class="campo">
                 <label for="producto">Producto</label>
@@ -43,21 +42,22 @@
 
             <div class="campo">
                 <label for="tipoComprobante">Tipo de Comprobante</label>
-                <select id="tipoComprobante" required>
+                <select id="tipoComprobante">
                     <option value="Factura">Factura</option>
                     <option value="Ticket">Ticket</option>
                 </select>
             </div>
 
-            <div class="campo">
+            <div class="campo oculto" id="campoDescuento">
                 <label for="descuento">Descuento (%)</label>
                 <input type="number" id="descuento" min="0" max="100" value="0">
             </div>
 
-            <div class="campo">
+            <div class="campo" id="ivaContainer">
                 <label for="iva">IVA (%)</label>
                 <input type="number" id="iva" min="0" max="100" value="15">
             </div>
+
 
             <div class="campo total">
                 SubTotal: <span id="subTotal">$0.00</span><br>
@@ -69,7 +69,7 @@
                 <input type="number" id="montoRecibido" step="0.01" required>
             </div>
 
-            <div class="campo total">
+            <div class="campo total oculto" id="campoVuelto">
                 Monto Devuelto: <span id="montoDevuelto">$0.00</span>
             </div>
 
@@ -83,6 +83,5 @@
     </main>
 
     <script src="./js/Ventas.js"></script>
-    <script src="./js/Clientes.js"></script>
 </body>
 </html>

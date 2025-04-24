@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const formVenta = document.getElementById("formVenta");
     const selectCliente = document.getElementById("cliente");
     const selectProducto = document.getElementById("producto");
+    const tipoComprobante = document.getElementById("tipoComprobante");
+
+    const campoCliente = document.getElementById("campoCliente");
 
     const inputs = {
         cantidad: document.getElementById("cantidad"),
@@ -25,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
         total: document.getElementById("total"),
         vuelto: document.getElementById("montoDevuelto"),
         listaVentas: document.getElementById("listaVentas")
+    };
+
+    const contenedores = {
+        descuento: document.getElementById("campoDescuento"),
+        iva: document.getElementById("ivaContainer"),
+        vuelto: document.getElementById("campoVuelto")
     };
 
     const cargarClientes = () => {
@@ -49,6 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    const mostrarSiTieneValor = (campo, contenedor) => {
+        if (campo.value.trim() === "" || parseFloat(campo.value) === 0) {
+            contenedor.classList.add("oculto");
+        } else {
+            contenedor.classList.remove("oculto");
+        }
+    };
+
     const calcularTotales = () => {
         const cantidad = parseFloat(inputs.cantidad.value) || 0;
         const precio = parseFloat(inputs.precio.value) || 0;
@@ -64,6 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
         outputs.subtotal.textContent = subtotal.toFixed(2);
         outputs.total.textContent = montoConIVA.toFixed(2);
         outputs.vuelto.textContent = vuelto.toFixed(2);
+
+        mostrarSiTieneValor(inputs.montoRecibido, contenedores.vuelto);
+        contenedores.iva.classList.remove("oculto");
     };
 
     Object.values(inputs).forEach(input => {
@@ -73,7 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
     formVenta.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        if (!inputs.cliente.value) {
+        const esTicket = tipoComprobante.value === "Ticket";
+        if (!esTicket && !inputs.cliente.value) {
             alert("Por favor, selecciona un cliente.");
             return;
         }
@@ -82,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const productoSeleccionado = productosGuardados.find(p => p.codigo === inputs.producto.value);
 
         const venta = {
-            cliente: inputs.cliente.value,
+            cliente: esTicket ? "Consumidor Final" : inputs.cliente.value,
             cantidad: inputs.cantidad.value,
             precio: inputs.precio.value,
             subtotal: outputs.subtotal.textContent,
@@ -110,8 +131,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cargarProductos();
         cargarClientes();
+
+        contenedores.vuelto.classList.add("oculto");
+        contenedores.iva.classList.remove("oculto");
+
+        tipoComprobante.dispatchEvent(new Event("change"));
     });
+
+    const actualizarVisibilidadDescuento = () => {
+        const esTicket = tipoComprobante.value === "Ticket";
+        const clienteSeleccionado = selectCliente.value.trim() !== "";
+    
+        if (!esTicket && clienteSeleccionado) {
+            contenedores.descuento.classList.remove("oculto");
+        } else {
+            contenedores.descuento.classList.add("oculto");
+            inputs.descuento.value = "0"; 
+        }
+    };
+    
+    tipoComprobante.addEventListener("change", () => {
+        campoCliente.classList.toggle("oculto", tipoComprobante.value === "Ticket");
+        selectCliente.required = tipoComprobante.value !== "Ticket";
+        contenedores.vuelto.classList.toggle("oculto", tipoComprobante.value === "Ticket");
+        contenedores.iva.classList.remove("oculto");
+        
+        actualizarVisibilidadDescuento();
+        calcularTotales();
+    });
+    
+    selectCliente.addEventListener("change", () => {
+        actualizarVisibilidadDescuento();
+        calcularTotales();
+    });    
 
     cargarClientes();
     cargarProductos();
+    tipoComprobante.dispatchEvent(new Event("change"));
 });

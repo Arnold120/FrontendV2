@@ -121,3 +121,7 @@ button[type="submit"]:hover {
     border-left: 5px solid #0077cc;
     border-radius: 5px;
 }
+
+.oculto {
+    display: none;
+}
