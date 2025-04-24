@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
     if (!usuarioActual) {
         alert("Debes iniciar sesión.");
-        window.location.href = "login.html";
+        window.location.href = "/Index.html";
         return;
     }
 
