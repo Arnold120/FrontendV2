@@ -20,33 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "/Index.html";
         });
     }
-    mostrarSeccion('bienvenida');
-});
-
-function mostrarSeccion(nombre) {
-    const secciones = document.querySelectorAll('.panel');
-    secciones.forEach(seccion => seccion.style.display = 'none');
-
-    let seccion = document.getElementById(nombre);
-    if (!seccion) {
-        seccion = document.createElement('section');
-        seccion.id = nombre;
-        seccion.classList.add('panel');
-        seccion.innerHTML = `<h2>${capitalizar(nombre)}</h2><p>Sección en desarrollo...</p>`;
-        document.querySelector('.contenido-principal').appendChild(seccion);
-    }
-
-    seccion.style.display = 'block';
-}
-
-function capitalizar(texto) {
-    return texto.charAt(0).toUpperCase() + texto.slice(1);
-}
-
-function mostrarMensaje(mensaje) {
-    alert(`Funcionalidad de "${mensaje}" en desarrollo.`);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    mostrarSeccion('bienvenida');
 });

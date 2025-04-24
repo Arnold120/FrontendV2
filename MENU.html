@@ -23,21 +23,21 @@
                 <li><a href="./Factura.html" onclick="mostrarSeccion('facturacion')">📄 Facturación</a></li>
                 <li><a href="./Ventas.html" onclick="mostrarSeccion('ventas')">🛒 Ventas</a></li>
                 <li><a href="./compras.html" onclick="mostrarSeccion('compras')">📦 Compras</a></li>
-                <li><a href="./Inventario.html" onclick="mostrarSeccion('inventario')">📊 Inventario</a></li>
-                <li><a href="./producto.html" onclick="mostrarSeccion('productos')">📚 Productos</a></li>
-                <li><a href="./Clientes.html" onclick="mostrarSeccion('clientes')">👥 Clientes</a></li>
-                <li><a href="./Proveedores.html" onclick="mostrarSeccion('proveedores')">🏭 Proveedores</a></li>
+                <li><a href="./Inventario.html" onclick="mostrarSeccion('inventario')">📊 Moviento de Inventario</a></li>
                 <!--<li><a href="#" onclick="mostrarSeccion('reportes')">📈 Reportes</a></li> -->
             </ul>
         </nav>
     </aside>
 
     <main class="contenido-principal">
-        <section id="bienvenida" class="panel">
-            <h2>Bienvenido al Sistema de Gestión</h2>
-            <p>Selecciona una opción del menú para comenzar a trabajar.</p>
-        </section>
-
+        <li class="submenu">
+            <a href="#">📂 Gestión de Catálogos</a>
+            <ul class="submenu-lista">
+                <li><a href="./producto.html" onclick="mostrarSeccion('productos')">📚 Productos</a></li>
+                <li><a href="./Clientes.html" onclick="mostrarSeccion('clientes')">👥 Clientes</a></li>
+                <li><a href="./Proveedores.html" onclick="mostrarSeccion('proveedores')">🏭 Proveedores</a></li>
+            </ul>
+        </li>
         <!-- Aquí puedes agregar más secciones dinámicas que se muestren con JS -->
     </main>
 
