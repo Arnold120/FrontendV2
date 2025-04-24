@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas - Librería El Estudiante</title>
+    <link rel="stylesheet" href="./css/Ventas.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>📦 Registro de Ventas</h1>
+        <a href="MENU.html" class="volver">← Volver al Menú</a>
+    </header>
+
+    <main class="contenido">
+        <form id="formVenta">
+            <h2>Registrar Nueva Venta</h2>
+
+            <div class="campo">
+                <label for="cliente">Seleccionar Cliente:</label>
+                <select id="cliente" name="cliente" required>
+                    <option value="">Selecciona un cliente</option>
+                    <!-- Aquí se llenarán los clientes desde JavaScript -->
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="producto">Producto</label>
+                <select id="producto" required>
+                    <option value="">Seleccione un producto</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" id="cantidad" min="1" required>
+            </div>
+
+            <div class="campo">
+                <label for="precioUnitario">Precio Unitario</label>
+                <input type="number" id="precioUnitario" step="0.01" required>
+            </div>
+
+            <div class="campo">
+                <label for="tipoComprobante">Tipo de Comprobante</label>
+                <select id="tipoComprobante" required>
+                    <option value="Factura">Factura</option>
+                    <option value="Ticket">Ticket</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="descuento">Descuento (%)</label>
+                <input type="number" id="descuento" min="0" max="100" value="0">
+            </div>
+
+            <div class="campo">
+                <label for="iva">IVA (%)</label>
+                <input type="number" id="iva" min="0" max="100" value="15">
+            </div>
+
+            <div class="campo total">
+                SubTotal: <span id="subTotal">$0.00</span><br>
+                Total: <span id="total">$0.00</span>
+            </div>
+
+            <div class="campo">
+                <label for="montoRecibido">Monto Recibido</label>
+                <input type="number" id="montoRecibido" step="0.01" required>
+            </div>
+
+            <div class="campo total">
+                Monto Devuelto: <span id="montoDevuelto">$0.00</span>
+            </div>
+
+            <button type="submit">Registrar Venta</button>
+        </form>
+
+        <section class="ventas-registradas">
+            <h2>Ventas Registradas</h2>
+            <ul id="listaVentas"></ul>
+        </section>
+    </main>
+
+    <script src="./js/Ventas.js"></script>
+    <script src="./js/Clientes.js"></script>
+</body>
+</html>

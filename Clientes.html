@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Librería El Estudiante</title>
+    <link rel="stylesheet" href="./css/clientes.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="ventas.html" class="volver">← Volver</a>
+        <h1>Gestión de Clientes</h1>
+    </header>
+
+    <main class="contenido">
+        <section class="formulario">
+            <h2>Registrar Cliente</h2>
+            <form id="formCliente">
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="campo">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="campo">
+                    <label for="fechaRegistro">Fecha de Registro:</label>
+                    <input type="date" id="fechaRegistro" name="fechaRegistro" required>
+                </div>
+                <button type="submit">Registrar Cliente</button>
+            </form>
+        </section>
+
+        <section class="clientes-registrados">
+            <h2>Clientes Registrados</h2>
+            <ul id="listaClientes"></ul>
+        </section>
+    </main>
+
+    <script src="./js/clientes.js"></script>
+</body>
+</html>

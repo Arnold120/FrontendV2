@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proveedores - Librería El Estudiante</title>
+    <link rel="stylesheet" href="./css/proveedores.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="MENU.html" class="volver">← Volver al Menú</a>
+        <h1>Gestión de Proveedores</h1>
+    </header>
+
+    <div class="container">
+        <h1>Gestión de Proveedores</h1>
+        <form id="form-proveedor">
+            <input type="text" id="nombreEmpresa" placeholder="Nombre de la empresa" required>
+            <input type="text" id="direccion" placeholder="Dirección" required>
+            <input type="tel" id="telefono" placeholder="Teléfono" required>
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <button type="submit">Registrar Proveedor</button>
+        </form>
+
+        <h2>Lista de Proveedores</h2>
+        <table id="tabla-proveedores">
+            <thead>
+                <tr>
+                    <th>Empresa</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregan los proveedores -->
+            </tbody>
+        </table>
+    </div>
+    <script src="./js/proveedores.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control | Librería El Estudiante</title>
+    <link rel="stylesheet" href="./css/MENU.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">
+            <h1>Librería El Estudiante</h1>
+        </div>
+        <div class="usuario">
+            <span id="usuarioNombre">Usuario: </span>
+            <button id="cerrarSesion">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="./Factura.html" onclick="mostrarSeccion('facturacion')">📄 Facturación</a></li>
+                <li><a href="./Ventas.html" onclick="mostrarSeccion('ventas')">🛒 Ventas</a></li>
+                <li><a href="./compras.html" onclick="mostrarSeccion('compras')">📦 Compras</a></li>
+                <li><a href="./Inventario.html" onclick="mostrarSeccion('inventario')">📊 Inventario</a></li>
+                <li><a href="./producto.html" onclick="mostrarSeccion('productos')">📚 Productos</a></li>
+                <li><a href="./Clientes.html" onclick="mostrarSeccion('clientes')">👥 Clientes</a></li>
+                <li><a href="./Proveedores.html" onclick="mostrarSeccion('proveedores')">🏭 Proveedores</a></li>
+                <!--<li><a href="#" onclick="mostrarSeccion('reportes')">📈 Reportes</a></li> -->
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="contenido-principal">
+        <section id="bienvenida" class="panel">
+            <h2>Bienvenido al Sistema de Gestión</h2>
+            <p>Selecciona una opción del menú para comenzar a trabajar.</p>
+        </section>
+
+        <!-- Aquí puedes agregar más secciones dinámicas que se muestren con JS -->
+    </main>
+
+    <script src="./js/MENU.js"></script>
+    <script src="./js/Ventas.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras - Librería El Estudiante</title>
+    <link rel="stylesheet" href="./css/compras.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="MENU.html" class="volver">← Volver al Menú</a>
+        <h1>Gestión de Compras</h1>
+    </header>
+
+    <main class="contenido">
+        <section class="formulario">
+            <h2>Registrar Compra</h2>
+            <form id="formCompra">
+                <div class="campo">
+                    <label for="usuarioNombre">Usuario:</label>
+                    <input type="text" id="usuarioNombre" name="usuarioNombre" readonly>
+                    <input type="hidden" id="usuarioID" name="usuarioID">
+                </div>
+            
+                <div class="campo">
+                    <label for="proveedor">Proveedor:</label>
+                    <select id="proveedor" name="proveedor" required>
+                        <option value="">Seleccione un proveedor</option>
+                    </select>
+                </div>
+            
+                <div class="campo">
+                    <label for="producto">Producto:</label>
+                    <select id="producto" name="producto" required>
+                        <option value="">Seleccione un producto</option>
+                    </select>
+                </div>
+            
+                <div class="campo">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" required>
+                </div>
+            
+                <div class="campo">
+                    <label for="precio">Precio Unitario:</label>
+                    <input type="number" id="precio" name="precio" step="0.01" required>
+                </div>
+            
+                <div class="campo">
+                    <label for="descuento">Descuento (%):</label>
+                    <input type="number" id="descuento" name="descuento" step="0.01" value="0">
+                </div>
+            
+                <div class="campo">
+                    <label for="iva">IVA (%):</label>
+                    <input type="number" id="iva" name="iva" step="0.01" value="15">
+                </div>
+            
+                <div class="campo">
+                    <label for="observaciones">Observaciones:</label>
+                    <textarea id="observaciones" name="observaciones"></textarea>
+                </div>
+            
+                <div class="campo">
+                    <label for="calificacion">Calificación del Producto (1 a 5):</label>
+                    <input type="number" id="calificacion" name="calificacion" min="1" max="5" required>
+                </div>
+            
+                <button type="submit">Registrar Compra</button>
+            </form>            
+        </section>
+
+        <section class="compras-registradas">
+            <h2>Compras Registradas</h2>
+            <ul id="listaCompras"></ul>
+        </section>
+    </main>
+    <script src="./js/compras.js"></script>
+</body>
+</html>

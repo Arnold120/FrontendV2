@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Facturación</title>
+    <link rel="stylesheet" href="./css/Factura.css">
+    <link rel="stylesheet" href="./css/compras.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="MENU.html" class="volver">← Volver al Menú</a>
+        <h1>Gestión de Compras</h1>
+    </header>
+
+    <main class="contenedor">
+        <h1>Facturación</h1>
+        <div id="facturaContainer" class="factura">
+            <div class="factura-header">
+                <img src="./images/Logo de la libreria el estudiante.png" alt="logo">
+                <div class="factura-info">
+                    <h2>Librería "El Estudiante"</h2>
+                    <p>Venta de útiles escolares, libros, artículos de oficina y más</p>
+                    <p>Ubicada en Jinotepe, Carazo</p>
+                </div>
+                <div class="factura-ruc">
+                    <p><strong>R.U.C.:</strong> 0011234567890</p>
+                    <p><strong>FACTURA:</strong> <span id="numFactura">001-001</span></p>
+                </div>
+            </div>
+        
+            <div class="factura-datos">
+                <p><strong>Cliente:</strong> <span id="clienteFactura"></span></p>
+                <p><strong>Fecha:</strong> <span id="fechaFactura"></span></p>
+            </div>
+        
+            <table class="factura-tabla">
+                <thead>
+                    <tr>
+                        <th>CANT.</th>
+                        <th>DESCRIPCIÓN</th>
+                        <th>PRECIO UNITARIO</th>
+                    </tr>
+                </thead>
+                <tbody id="detalleFactura"></tbody>
+            </table>
+        
+            <div class="factura-totales">
+                <p><strong>SUBTOTAL:</strong> C$<span id="subFactura"></span></p>
+                <p><strong>I.V.A.:</strong> 15%</p>
+                <p><strong>TOTAL:</strong> C$<span id="totalFactura"></span></p>
+                <p><strong>MONTO RECIBIDO:</strong> C$<span id="recibidoFactura"></span></p>
+                <p><strong>VUELTO:</strong> C$<span id="vueltoFactura"></span></p>
+            </div>
+        
+            <div class="factura-firma">
+                <p>_______________________________</p>
+                <p>Firma del Cliente</p>
+            </div>
+        </div>
+        
+        <section class="facturas-emitidas">
+            <h2>Facturas Emitidas</h2>
+            <div id="listaFacturas" class="lista-facturas"></div>
+        </section>     
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="./js/Facturacion.js"></script>
+</body>
+</html>

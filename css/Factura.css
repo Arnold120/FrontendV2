@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 20px;
+}
+
+.factura {
+    width: 700px;
+    margin: 20px auto;
+    padding: 25px;
+    border: 2px solid #000;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.factura-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.contenedor h1{
+    padding-left: 28.5%;
+}
+
+.factura-header img {
+    width: 10%;
+    height: auto;
+    object-fit: contain;
+    margin-right: -40px;
+}
+
+.factura-info h2 {
+    font-size: 22px;
+    margin: 0;
+    color: #3b3b98;
+}
+
+.factura-info p {
+    margin: 2px 0;
+}
+
+.factura-ruc {
+    text-align: right;
+}
+
+.factura-ruc p {
+    margin: 3px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.factura-datos {
+    margin-top: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.factura-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.factura-tabla th,
+.factura-tabla td {
+    border: 1px solid #000;
+    padding: 6px;
+    text-align: center;
+}
+
+.factura-tabla th {
+    background-color: #e3e3ff;
+}
+
+.factura-totales {
+    margin-top: 15px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.factura-totales p {
+    margin: 5px 0;
+}
+
+.factura-firma {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.factura-firma p {
+    margin: 5px 0;
+}
+
+#listaFacturas {
+    margin-top: 10px;
+    width: 71%;
+    height: auto;
+    padding-left: 28.5%;    
+}
+
+.facturas-emitidas h2{
+    padding-left: 28.5%;
+}
+
+#listaFacturas li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.lista-facturas .factura {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+}
+
+.lista-facturas .factura button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #4a63e7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.lista-facturas .factura button:hover {
+    background-color: #3548b3;
+}

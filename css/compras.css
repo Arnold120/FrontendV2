@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 20px;
+}
+
+.topbar {
+    background-color: #003366;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.topbar .volver {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.topbar .volver:hover {
+    text-decoration: underline;
+}
+
+.contenido {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.formulario h2 {
+    margin-bottom: 20px;
+    color: #003366;
+    text-align: center;
+}
+
+.campo {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0066cc;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #0077cc;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #005fa3;
+}
+
+.compras-registradas {
+    margin-top: 40px;
+}
+
+.compras-registradas h2 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#listaCompras {
+    list-style: none;
+    padding: 0;
+}
+
+#listaCompras li {
+    background-color: #eef2f5;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-left: 5px solid #0077cc;
+    border-radius: 5px;
+}
