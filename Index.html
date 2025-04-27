@@ -3,108 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Iniciar Sesión - Librería El Estudiante</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        
-        .topbar {
-            background-color: #003366;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .topbar .logo h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-                
-        .login-background {
-            background-image: url('./images/fondologin.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contenido-principal {
-            background-color: rgba(255, 255, 255, 0.85); 
-            margin: auto;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-        }
-
-        input, button {
-            width: 100%;
-            padding: 0.5rem;
-            margin: 0.5rem 0;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
-    <div class="login-background">
+    <div class="main-container login-background">
         <header class="topbar">
             <div class="logo">
                 <h1>Librería "El Estudiante"</h1>
             </div>
         </header>
 
-    
-        
+        <img src="./images/fondologin.jpg" alt="">
+
         <main class="contenido-principal">
-            <h2>Iniciar Sesión</h2>
-            <form id="login-form">
-                <input type="text" id="usuario" placeholder="Usuario" required>
-                <input type="password" id="contrasena" placeholder="Contraseña" required>
-                <button type="submit">Entrar</button>
-            </form>
+            <div id="welcome-message" style="display: none;">
+                <h2>¡Bienvenido, <span id="user-name"></span>!</h2>
+                <p>Has iniciado sesión.</p>
+                <button id="logout-btn">Cerrar sesión</button>
+            </div>
+
+            <div id="login-form-container">
+                <h2>Iniciar Sesión</h2>
+                <form id="login-form">
+                    <input type="text" id="usuario" placeholder="Usuario" required><br>
+                    <input type="password" id="contrasena" placeholder="Contraseña" required><br>
+                    <button type="submit">Entrar</button>
+                </form>
+                <!-- <p><a href= "./InicioSeccion.html" id="password-link">¿Has olvidado tu contraseña?</a></p> //Mejora de diseño de login futura-->
+                <p><a href="/Registrase.html" id="registro-link">¿No tienes cuenta? ¡Regístrate!</a></p>
+            </div>
         </main>
     </div>
-    <script>
-        const usuariosValidos = [
-            { id: 1, usuario: "admin", contrasena: "1234" },
-            { id: 2, usuario: "cliente", contrasena: "abc123" }
-        ];
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
-            if (usuarioActual && usuarioActual.id && usuarioActual.nombreUsuario) {
-                window.location.href = "./MENU.html";
-                return;
-            }
-            const form = document.getElementById("login-form");
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-                const usuario = document.getElementById("usuario").value.trim();
-                const contrasena = document.getElementById("contrasena").value.trim();
-
-                const valido = usuariosValidos.find(
-                    u => u.usuario === usuario && u.contrasena === contrasena
-                );
-
-                if (valido) {
-                    localStorage.setItem("usuarioActual", JSON.stringify({
-                        id: valido.id,
-                        nombreUsuario: valido.usuario
-                    }));
-                    alert("¡Bienvenido, " + usuario + "!");
-                    window.location.href = "./MENU.html";
-                } else {
-                    alert("Usuario o contraseña incorrectos.");
-                }
-            });
-        });
-    </script>
+    <script src="./js/login.js"></script>
 </body>
 </html>

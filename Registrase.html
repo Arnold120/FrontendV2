@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registrarse - Librería El Estudiante</title>
+        <link rel="stylesheet" href="./css/login.css">
+    </head>    
+<body>
+    <div class="main-container login-background">
+        <header class="topbar">
+            <div class="logo">
+                <h1>Librería "El Estudiante"</h1>
+            </div>
+        </header>
+
+        <img src="./images/fondologin.jpg" alt="">
+
+        <main class="contenido-principal-2">
+            <h2>Registrarse</h2>
+            <form id="register-form">
+                <input type="text" id="new-usuario" placeholder="Nuevo Usuario" required><br>
+                <input type="password" id="new-contrasena" placeholder="Contraseña" required><br>
+                <input type="password" id="confirm-contrasena" placeholder="Confirmar Contraseña" required><br>
+                <input type="email" id="new-correo" placeholder="Correo electrónico" required><br>
+                <button type="submit">Registrar</button>
+            </form>
+            <p><a href="./Index.html">¿Ya tienes cuenta? ¡Inicia sesión!</a></p>
+        </main>
+    </div>
+
+    <!--Pruebas de validaciones de regitro de seccion funcional con correo //Aun en pruebas de mejoras(pero funcinal, MAX de soport de usuarios 200)-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js?v=1.0.0"></script>
+    <script type="text/javascript">
+        emailjs.init("jcCjqpHdOTpmPV3ik"); /*Servidores de emailjs cuenta personal a cambiar(NOTA;  aunque este en el script de Registro son pruebas de unitarias, nomas para practica xd)*/
+    </script>
+    <script src="./js/Registro.js"></script>
+</body>
+</html>
